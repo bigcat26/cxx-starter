@@ -1,0 +1,5 @@
+.clangd
+.cache
+.DS_Store
+.build*
+compile_commands.json

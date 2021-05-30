@@ -1,0 +1,12 @@
+{
+    "[cpp]": {
+        "editor.formatOnSave": true,
+    },
+    "cmake.generator": "Unix Makefiles",
+    "cmake.buildDirectory": "${workspaceFolder}/.build",
+    "cmake.configureArgs": [
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+    ],
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json"
+}
