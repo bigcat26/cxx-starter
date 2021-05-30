@@ -1,14 +1,14 @@
-#include <iostream>
-#include <map>
-#include <string>
-#include <memory>
-#include <vector>
-#include <list>
 #include "lib.h"
+#include <iostream>
+#include <list>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    sayHello();
-    return 0;
+  sayHello();
+  return 0;
 }

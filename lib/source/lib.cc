@@ -2,9 +2,9 @@
 
 using namespace std;
 
-#include "lib.hh"
+#include "lib.h"
 
 void sayHello(void) {
-    constexpr msg = R"__(Hello, world!)__";
-    cout << msg << endl;
+  constexpr auto msg = R"__(Hello, world!)__";
+  cout << msg << endl;
 }

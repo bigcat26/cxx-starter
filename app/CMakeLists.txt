@@ -3,7 +3,7 @@ project(cxx)
 file(GLOB src *)
 
 add_executable(${PROJECT_NAME} ${src})
-add_dependencies(${PROJECT_NAME} lib)
+add_dependencies(${PROJECT_NAME} cxxlib)
 
 set_target_properties(${PROJECT_NAME}
   PROPERTIES
@@ -22,7 +22,7 @@ target_compile_definitions(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
-    lib
+    cxxlib
     $<$<BOOL:${WIN32}>:ws2_32>
     $<$<NOT:$<BOOL:${WIN32}>>:pthread>
 )

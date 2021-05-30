@@ -7,10 +7,6 @@ file(GLOB_RECURSE src
 
 add_library(${PROJECT_NAME} ${src})
 
-add_dependencies(${PROJECT_NAME}
-  $<$<CONFIG_BUILD_SPDLOG>:spdlog_build>
-)
-
 set_target_properties(${PROJECT_NAME}
   PROPERTIES
     CXX_STANDARD 11
@@ -28,7 +24,7 @@ target_compile_definitions(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
-    cjson
+    $<$<BOOL:${CONFIG_BUILD_SPDLOG}>:spdlog_build>
 )
 
 target_include_directories(${PROJECT_NAME}
