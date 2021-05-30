@@ -1,9 +1,4 @@
-# The P2P project
+# CXX Quick Start Project
 
-## TODO
-
-- Implement 
-  - [x] RtcOnSenderBandwidthEstimation
-  - [x] RtcOnPictureLoss
-  - [ ] Signaling
-  - [ ] Redis Server, coturn Server (Ansible deploy?)
+- CMake
+- VSCode
