@@ -8,10 +8,14 @@ file(GLOB_RECURSE src
 macro(define_library project)
   set_target_properties(${project}
     PROPERTIES
-      CXX_STANDARD 11
       CXX_STANDARD_REQUIRED YES
       CXX_EXTENSIONS NO
       POSITION_INDEPENDENT_CODE ON
+  )
+
+  target_compile_features(${project} 
+    PUBLIC 
+      cxx_std_17
   )
 
   target_compile_definitions(${project}
