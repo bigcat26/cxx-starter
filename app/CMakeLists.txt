@@ -1,4 +1,4 @@
-project(cxx)
+project(app)
 
 file(GLOB src *)
 

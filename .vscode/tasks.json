@@ -3,7 +3,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "make -j -C ${workspaceFolder}/.build",
+            "command": "cmake --build ${workspaceFolder}/.build",
             "problemMatcher": {
                 "owner": "$gcc",
                 "fileLocation": [
