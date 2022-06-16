@@ -5,6 +5,7 @@ A skeleton project aim to start my C++ project as quick as possible
 ## Requirements
 
 - CMake
+- Conan
 - Ninja
 - VSCode
 
