@@ -5,22 +5,27 @@
             "name": "debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/.build/bin/app",
+            "program": "${workspaceFolder}/.build/app/app",
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "args": [""],
             "environment": [],
             "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "enable pretty printing",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb",
+                "setupCommands": [
+                    {
+                        "description": "为 gdb 启用整齐打印",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+            },
+            "preLaunchTask": "build"
         }
     ]
 }

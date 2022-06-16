@@ -26,6 +26,8 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
     cxxlib-static
+    spdlog::spdlog
+    Catch2::Catch2
     $<$<BOOL:${WIN32}>:ws2_32>
     $<$<NOT:$<BOOL:${WIN32}>>:pthread>
 )

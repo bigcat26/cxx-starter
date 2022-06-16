@@ -2,7 +2,7 @@
     "[cpp]": {
         "editor.formatOnSave": true,
     },
-    // "cmake.generator": "Unix Makefiles",
+    "cmake.generator": "Ninja",
     "cmake.buildDirectory": "${workspaceFolder}/.build",
     "cmake.configureArgs": [
         "-DCMAKE_BUILD_TYPE=Debug",

@@ -41,5 +41,11 @@ conan_cmake_install(PATH_OR_REFERENCE .
                       catch2:with_main=True
 )
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
+list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
+
+find_package(spdlog REQUIRED)
+find_package(Catch2 REQUIRED)
+
 add_subdirectory(lib)
 add_subdirectory(app)
