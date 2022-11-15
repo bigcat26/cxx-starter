@@ -1,6 +1,6 @@
 # CXX Quick Start Project
 
-A skeleton project aim to start my C++ project as quick as possible
+A skeleton project aim to start my C++ project ASAP
 
 ## Requirements
 
@@ -14,6 +14,12 @@ A skeleton project aim to start my C++ project as quick as possible
 ```shell
 git clone https://github.com/bigcat26/cxx-starter.git
 code -a cxx-starter
+```
+
+run following commands inside vscode terminal
+
+```
+mkdir .build && cd .build && conan install ..
 ```
 
 - `cmd + shift + p:  CMake Configure`
