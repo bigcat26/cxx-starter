@@ -19,7 +19,7 @@ code -a cxx-starter
 run following commands inside vscode terminal
 
 ```
-mkdir .build && cd .build && conan install ..
+mkdir .build && cd .build && conan install .. -of . --build missing
 ```
 
 - `cmd + shift + p:  CMake Configure`
