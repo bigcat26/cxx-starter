@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.15)
+project(cxx-quickstart)
 
 include(ExternalProject)
 include(CheckIncludeFile)
@@ -7,23 +8,32 @@ include(CheckSymbolExists)
 include(CMakeDependentOption)
 include(ExternalProject)
 
-project(cxx-quickstart)
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug)
+endif()
 
-option(CONFIG_BUILD_STATIC "Build static library" ON)
-option(CONFIG_BUILD_SHARED "Build shared library" OFF)
+set(CMAKE_MAP_IMPORTED_CONFIG_DEBUG RELEASE)
+set(CMAKE_FIND_PACKAGE_REDIRECTS_DIR ${CMAKE_BINARY_DIR})
+list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
+
+
+option(BUILD_STATIC "Build static library" ON)
+option(ENABLE_TESTS "Enable tests" ON)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Debug")
 endif(NOT CMAKE_BUILD_TYPE)
 
-#
-# add search path for find_package
-#
+set(CMAKE_MAP_IMPORTED_CONFIG_DEBUG RELEASE)
+set(CMAKE_FIND_PACKAGE_REDIRECTS_DIR ${CMAKE_BINARY_DIR})
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
 
 find_package(spdlog REQUIRED)
-find_package(Catch2 REQUIRED)
 
 add_subdirectory(lib)
 add_subdirectory(app)
+
+if(ENABLE_TESTS)
+  add_subdirectory(tests)
+endif()

@@ -3,10 +3,15 @@
         "editor.formatOnSave": true,
     },
     "cmake.generator": "Ninja",
+    "cmake.buildArgs": [
+      "-j",
+    ],  
     "cmake.buildDirectory": "${workspaceFolder}/.build",
+    "cmake.clearOutputBeforeBuild": false,
+    "cmake.copyCompileCommands": "${workspaceFolder}/.build/compile_commands.json",  
     "cmake.configureArgs": [
         "-DCMAKE_BUILD_TYPE=Debug",
         "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
     ],
-    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json"
+    "clangd.path": "clangd",
 }

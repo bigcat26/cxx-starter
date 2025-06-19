@@ -2,13 +2,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "debug",
+            "name": "Unit test",
+            "type": "lldb",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${cmake.testProgram}",
+            "args": [
+                "${cmake.testArgs}"
+            ],
+            "preLaunchTask": "build",
+        },
+        {
+            "name": "yalox (cppdbg)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/.build/app/app",
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "args": [""],
+            "args": [],
             "environment": [],
             "externalConsole": false,
             "osx": {
@@ -19,13 +30,21 @@
                 "miDebuggerPath": "/usr/bin/gdb",
                 "setupCommands": [
                     {
-                        "description": "为 gdb 启用整齐打印",
+                        "description": "Enable pretty-printing for gdb",
                         "text": "-enable-pretty-printing",
                         "ignoreFailures": true
                     }
                 ],
             },
             "preLaunchTask": "build"
+        },
+        {
+            "name": "yalox (lldb)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/.build/app/app",
+            "cwd": "${workspaceFolder}",
+            "args": [],
         }
     ]
 }

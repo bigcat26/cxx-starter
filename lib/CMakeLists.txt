@@ -30,14 +30,11 @@ target_include_directories(${PROJECT_NAME}-obj
     ${CMAKE_CURRENT_SOURCE_DIR}/interface
 )
 
-
-if(CONFIG_BUILD_STATIC)
+if(BUILD_STATIC)
   add_library(${PROJECT_NAME}-static STATIC)
   set_target_properties(${PROJECT_NAME}-static PROPERTIES PREFIX lib)
   target_link_libraries(${PROJECT_NAME}-static ${PROJECT_NAME}-obj)
-endif()
-
-if(CONFIG_BUILD_SHARED)
+else(BUILD_STATIC)
   add_library(${PROJECT_NAME}-shared SHARED)
   set_target_properties(${PROJECT_NAME}-shared PROPERTIES PREFIX lib)
   target_link_libraries(${PROJECT_NAME}-shared ${PROJECT_NAME}-obj)
