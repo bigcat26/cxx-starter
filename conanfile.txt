@@ -9,6 +9,3 @@ CMakeDeps
 spdlog/*:header_only=True
 gtest/*:shared=False
 gtest/*:build_gmock=True
-
-[imports]
-lib,*.so*->./imports
