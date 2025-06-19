@@ -13,7 +13,7 @@
             "preLaunchTask": "build",
         },
         {
-            "name": "yalox (cppdbg)",
+            "name": "App (cppdbg)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/.build/app/app",
@@ -39,7 +39,7 @@
             "preLaunchTask": "build"
         },
         {
-            "name": "yalox (lldb)",
+            "name": "App (lldb)",
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/.build/app/app",
