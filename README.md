@@ -1,27 +1,48 @@
-# CXX Quick Start Project
+# C++ Quick Start Project
 
-A skeleton project aim to start my C++ project ASAP
+A skeleton project aimed at starting C++ projects as quickly as possible.
 
 ## Requirements
 
 - CMake
 - Conan
 - Ninja
-- VSCode
 
 ## Usage
 
-```shell
-git clone https://github.com/bigcat26/cxx-starter.git
-code -a cxx-starter
-```
+1. **Clone the repository:**
 
-run following commands inside vscode terminal
+    ```shell
+    git clone https://github.com/bigcat26/cxx-starter.git
+    cd cxx-starter
+    ```
 
-```
-mkdir .build && cd .build && conan install .. -of . --build missing
-```
+3. **Open in VSCode:**
 
-- `cmd + shift + p:  CMake Configure`
-- `cmd + shift + p:  CMake Build`
-- `F5`: start debug run
+    ```shell
+    # If the editor's command-line tool (e.g., 'code', 'cursor') is in your PATH
+    code .
+    ```
+
+4. **Set up the project:**
+
+    Run the following commands in the VSCode integrated terminal:
+
+    ```shell
+    # Create a build directory and navigate into it
+    mkdir build && cd build
+
+    # Install dependencies using Conan
+    conan install .. --output-folder=. --build=missing
+    ```
+
+5. **Configure and Build:**
+
+    Use the VSCode Command Palette (`Cmd + Shift + P` on macOS, `Ctrl + Shift + P` on Windows/Linux):
+
+    - Run `CMake: Configure`
+    - Run `CMake: Build`
+
+6. **Debug:**
+
+    - Press `F5` to start a debugging session.
